@@ -1,0 +1,1 @@
+// Create a program that reads a decimal number and displays its entire portion on the screen
