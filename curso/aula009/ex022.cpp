@@ -1,0 +1,1 @@
+// Write a program that reads a person's full name and displays: The name in all uppercase and lowercase letters. How many letters in total (not including spaces). how many letters are in the first name.
