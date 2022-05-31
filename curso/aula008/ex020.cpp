@@ -2,16 +2,28 @@
 // Write a program that reads 4 numbers and displays the order drawn
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 int main()
 {
-    int nums[4];
+    vector<int> nums;
     cout << "Type four numbers:\n$ ";
-    cin >> nums[1] >> nums[2] >> nums[3] >> nums[4];
+    for (int i = 3; i >= 0; i--)
+    {   
+        int add;
+        cin >> add;
+        nums.push_back(add);
+    }
+
+    random_shuffle(nums.begin(), nums.end());
     cout << "The random order is:\n";
 
-    // There is no way of doing this in c++ for now using the knowledge apresented on the Curso em Video course
-
+    for (int i = 3; i >= 0; i--)
+    {   
+        cout << nums[i];
+    }
+    
     return 0;
 }
