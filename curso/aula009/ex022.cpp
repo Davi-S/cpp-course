@@ -5,38 +5,42 @@
 
 #include <iostream>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 int main()
 {   
-    cout << "What's your full name?\n$ ";
-
-    // Get input with spaces
-    char name[50];
-    cin.getline(name, sizeof(name));
-    string str(name);
-
+    cout << "What's your full name?\n$ ";    
+    string name;
+    getline(cin, name); // Get input with spaces
     cout << "Your name is: " << name << "\n";
 
     // upper case
-    char name_upper[50];
-    for (int i = 0; i < sizeof(name); i++)
-    {
-        name_upper[i] = toupper(name[i]);
-    }
-    cout << "All upper case: " << name_upper << "\n";
+    for (auto & c: name) c = toupper(c); // I have no idea what is this kind of loop
+    cout << "All upper case: " << name << "\n";
 
     // lower case
-    char name_lower[50];
-    for (int i = 0; i < sizeof(name); i++)
-    {
-        name_lower[i] = tolower(name[i]);
+    for (auto & c: name) c = tolower(c); // I have no idea what is this kind of loop
+    cout << "All lower case: " << name << "\n";
+
+    // total leters without spaces
+    int from;
+    int space_count = 0;
+    int name_length = name.length();
+    for (int i = 0; i < name_length; i++)
+    {   
+        int space = name.find(" ", from);          
+        if (space == -1)
+        {
+            break;
+        }
+        from = space + 1;
+        space_count++;
     }
-    cout << "All lower case: " << name_lower << "\n";
+    cout << "Total letters without spaces: " << name_length - space_count << "\n";
 
-    // total leters TODO 
-    cout << sizeof(name);
-
-
+    // total letters in the first name
+    cout << "Letter in the first name: " << name.find(" ") << "\n";
+    
     return 0;
 }
