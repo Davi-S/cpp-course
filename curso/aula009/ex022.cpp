@@ -26,21 +26,20 @@ int main()
     // total leters without spaces
     int from;
     int space_count = 0;
-    int name_length = name.length();
-    for (int i = 0; i < name_length; i++)
+    for (int i = 0; i < name.length(); i++)
     {   
         int space = name.find(" ", from);          
-        if (space == -1)
+        if (space == -1) // There is no more occourences of spaces
         {
             break;
         }
         from = space + 1;
         space_count++;
     }
-    cout << "Total letters without spaces: " << name_length - space_count << "\n";
+    cout << "Total letters without spaces: " << name.length() - space_count << "\n";
 
     // total letters in the first name
-    cout << "Letter in the first name: " << name.find(" ") << "\n";
+    cout << "Letter in your first name: " << name.find(" ") << "\n";
     
     return 0;
 }
