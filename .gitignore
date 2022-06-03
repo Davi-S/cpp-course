@@ -1,2 +1,5 @@
 # VSCode config files for debugging and compiling
 .vscode
+
+#ignore executable files
+*.exe
