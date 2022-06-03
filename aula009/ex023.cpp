@@ -7,14 +7,19 @@ using namespace std;
 
 int main()
 {
-    char str_number[4];
-    cout << "Type a integer number from 0 to 9999:\n$ ";
-    cin >> str_number;
+    int number;
+    cout << "Type a integer number from -9999 to +9999:\n$ ";
+    cin >> number;
 
-    cout << "Thousands: " << str_number[0] << "000\n";
-    cout << "Hundreds: " << str_number[1] << "00\n";
-    cout << "Dozens: " << str_number[2] << "0\n";
-    cout << "Units: " << str_number[3] << "\n";
+    int th = (number % 1000);
+    int hu = (number % 100);
+    int te = (number % 10);
+    int un = (number % 1);
+
+    cout << "Thousands: " << number - th << "\n";
+    cout << "Hundreds: "<< th - hu << "\n";
+    cout << "Tens: " << hu - te << "\n";
+    cout << "Units: " << te - un << "\n";
 
     return 0;
 }
